@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#111111">
+  <title>Подготовка к ЕГЭ и ОГЭ по русскому языку</title>
+
+  <link rel="preload" href="fonts/MullerRegular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/RobotoFlex.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="css/vendor.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <script defer src="js/main.js"></script>
+</head>
+
+<body class="page__body">
+  <!-- Загрузка -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__percents"><span id="percents">0</span></div>
+    <div class="preloader__loader">
+      <div class="wave">
+        <img src="img/svg/icon.svg" alt="Перо" width="100" height="100" class="wave__icon">
+      </div>
+    </div>
+  </div>
+  <!-- Загрузка -->
+
+  <div class="site-container">
+    <header class="header">
+  <div class="overlay"></div>
+  <div class="container">
+
+    <div class="navigation">
+      <div class="nav-contacts navigation__nav-contacts">
+
+        <div class="logo nav-contacts__logo">
+          <a href="index.html" class="logo__header">
+            <img src="img/svg/logo-vertical.svg" width="170" height="60" alt="Русский легко">
+          </a>
+        </div>
+
+        <div class="phone-header nav-contacts__phone-header">
+
+          <div class="phone-header__call">
+            <a href="tel:+79253753577" class="social-icon">
+              <img src="img/svg/tel.svg" alt="Позвонить в Автошколу РУЛИ">
+            </a>
+          </div>
+
+          <div class="phone-header__tel">
+            <a href="tel:+79253753577" class="ws">+7 925 375-35-77</a>
+            <br>
+            <span>c 10:00–22:00</span>
+          </div>
+
+        </div>
+
+        <div class="header-btn nav-contacts__btn">
+         <button class="btn btn--border btn--small">Перезвонить</button>
+         <!-- <li> -->
+
+            <!-- м.Волоколамская<br>
+            <address>ул.Пятницкая, д.9, этаж 1</address> -->
+          <!-- </li> -->
+          <!-- <li>
+            м.Фонвизинская<br>
+            <address>ул.Милашенкова, д.7к1</address>
+          </li> -->
+        </div>
+
+        <ul class="socials nav-contacts__socials">
+          <!-- <li><a href="https://instagram.com/p/CqNhy7NI4JJ/" class="social-icon" target="_blank"><img
+                src="img/svg/icon-inst.svg" width="20" height="20" alt="Инстаграм Русский легко"></a></li> -->
+          <!-- <li><a href="https://vk.com/avtoshkola_ruli" class="social-icon" target="_blank"><img
+                src="img/svg/icon-vk.svg" width="20" height="20" alt="Соцсеть вконтакте Русский легко"></a></li> -->
+          <li><a href="whatsapp://send?phone=+79253753577" class="social-icon" target="_blank"><img
+                src="img/svg/icon-wts.svg" width="20" height="20" alt="Ватсап Русский легко"></a></li>
+          <li><a href="" class="social-icon" target="_blank"><img src="img/svg/icon-tlgr.svg" width="20" height="20"
+                alt="Телеграм Русский легко"></a></li>
+        </ul>
+
+        <div class="hamburger-slim nav-contacts__hamburger-slim" aria-label="Меню">
+        </div>
+      </div>
+    </div>
+
+    <div class="header-menu">
+      <div class="header-content">
+
+        <nav class="nav header__nav">
+          <ul class="nav__list list-reset">
+            <li class="nav__item"><a href="about-page.html" class="nav__link">Главная</a></li>
+
+            <li class="nav__item nav__item--drop"><a href="sales.html" class="nav__link nav__link--drop">Наши курсы</a>
+              <ul class="nav__list nav__list--dropdown dropdown-list dropdown-submenu">
+                <li class="dropdown-submenu__item">
+                  <h2 class="dropdown-submenu__title">Подготовка к ЕГЭ</h2>
+                  <a href="sales.html" class="nav__link dropdown-submenu__banner">
+                    <img src="img/decor/sochinenie.webp" alt="Подготовка к ЕГЭ">
+                  </a>
+                </li>
+                <li class="dropdown-submenu__item">
+                  <h2 class="dropdown-submenu__title">Подготовка к ОГЭ</h2>
+                  <a href="sales.html" class="nav__link dropdown-submenu__banner">
+                    <img src="img/decor/izlozhenie.webp" alt="Подготовка к ОГЭ">
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav__item nav__item--drop"><a href="sales.html" class="nav__link nav__link--drop">Самоподготовка</a>
+              <ul class="nav__list nav__list--dropdown dropdown-list dropdown-submenu">
+                <li class="dropdown-submenu__item">
+                  <h2 class="dropdown-submenu__title">Теория</h2>
+                  <ul class="dropdown-submenu__list">
+                    <li class="nav__link dropdown-submenu__list-item"><a href="sales.html">Правописание</a>
+                    </li>
+                    <li class="nav__link dropdown-submenu__list-item"><a href="sales.html">Пунктуация</a></li>
+                    <li class="nav__link dropdown-submenu__list-item"><a href="sales.html">Культура речи</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown-submenu__item">
+                  <h2 class="dropdown-submenu__title">Практика</h2>
+                  <ul class="dropdown-submenu__list">
+                    <li class="nav__link dropdown-submenu__list-item"><a href="sales.html">Тренажер «Слова с
+                        <span>ПРЕ-</span> и <span>ПРИ-</span>»</a>
+                    </li>
+                    <li class="nav__link dropdown-submenu__list-item"><a href="sales.html">Чередование гласных в
+                        корне</a></li>
+                    <li class="nav__link dropdown-submenu__list-item"><a href="sales.html">Ударения в словах</a></li>
+                  </ul>
+                </li>
+
+              </ul>
+            </li>
+
+            <!-- <li class="nav__item"><a href="services-page.html" class="nav__link nav__link--drop">Статьи</a>
+
+                      <ul class="nav__list nav__list--dropdown dropdown-list">
+                        <li class="dropdown-list__item"><a href="services-page.html"
+                            class="nav__link dropdown-list__link">Восстановление навыков
+                            вождения и теории</a></li>
+                        <li class="dropdown-list__item"><a href="services-page.html"
+                            class="nav__link dropdown-list__link">Маршрут ГИБДД</a></li>
+                        <li class="dropdown-list__item"><a href="services-page.html"
+                            class="nav__link dropdown-list__link">Юридическое
+                            сопровождение в ГИБДД</a></li>
+                        <li class="dropdown-list__item"><a href="services-page.html"
+                            class="nav__link dropdown-list__link">Занятия на личном авто
+                            и по желаемому маршруту</a></li>
+                        <li class="dropdown-list__item"><a href="services-page.html"
+                            class="nav__link dropdown-list__link">Замена прав</a></li>
+                        <li class="dropdown-list__item"><a href="services-page.html"
+                            class="nav__link dropdown-list__link">Помощь в возврате
+                            налогового вычета 13%</a></li>
+                      </ul>
+
+                    </li> -->
+
+            <li class="nav__item"><a href="question-answer.html" class="nav__link">Ответы на вопросы</a></li>
+
+            <li class="nav__item"><a href="schedule-page.html" class="nav__link">Отзывы</a></li>
+
+            <li class="nav__item"><a href="contacts-page.html" class="nav__link">Ваш репетитор</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav__footer">
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</header>
+
+    <main class="main">
+      <!-- <h1>Проверка шрифта первый</h1>
+<h2>Проверка шрифта второй</h2>
+<p>Проверка шрифта</p>
+<picture>
+  <source srcset="img/cover.webp" media="(max-width: 768px)">
+  <source srcset="img/cover.webp" type="image/webp">
+  <img src="img/cover.jpg" alt="">
+</picture>
+<picture>
+  <source srcset="img/Цветовая-палитра.webp" media="(max-width: 768px)">
+  <source srcset="img/Цветовая-палитра.webp" type="image/webp">
+  <img src="img/Цветовая-палитра.jpg" alt="">
+</picture> -->
+
+<section class="hero-section main__hero-section">
+  <div class="hero-section__container container">
+    <div class="hero">
+      <div class="hero__wrapper">
+        <div class="hero__img">
+          <picture>
+            <source srcset="img/decor/hero-1.webp" media="(max-width: 768px)">
+            <source srcset="img/decor/hero-1.webp" type="image/webp">
+            <img src="img/decor/hero-1.jpg" alt="">
+          </picture>
+        </div>
+        <div class="hero__content">
+          <div class="hero__title">
+            <h1>Подготовка к <span>ОГЭ</span> и <span>ЕГЭ</span> по русскому языку</h1>
+          </div>
+          <p>Научим понимать русский язык, а не просто зубрить</p>
+          <ul>
+            <li>Подготовка с репетитором по русскому языку 2 раза в неделю</li>
+            <li>84% учеников сдают на 5 баллов после курсов</li>
+            <li>Работающая методика онлайн‑обучения</li>
+          </ul>
+          <div class="hero__btns">
+            <button class="btn btn--w btn--mb _btn">Бесплатное пробное занятие</button>
+            <a href="#!" class="btn btn--link btn--link-mb">Выбрать курс
+              <svg viewBox="0 0 70 36">
+                <path
+                  d="M6.9739 30.8153H63.0244C65.5269 30.8152 75.5358 -3.68471 35.4998 2.81531C-16.1598 11.2025 0.894099 33.9766 26.9922 34.3153C104.062 35.3153 54.5169 -6.68469 23.489 9.31527" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="courses-section main__courses-section">
+  <div class="courses-section__container container">
+    <h2 class="visually-hidden">Курсы обучения по русскому языку (подготовка к ОГЭ и ЕГЭ)</h2>
+    <div class="courses">
+
+      <div class="courses__item course">
+
+        <div class="course__image course-image">
+
+          <div class="course-image__circle">
+            <div class="course-image__tutor">
+              <picture>
+                <source srcset="img/decor/tutor.webp" type="image/webp">
+                <img src="img/decor/tutor.jpg" alt="Светлана Дворецкая - репетитор по русскому языку" width="100"
+                  height="2100">
+              </picture>
+            </div>
+          </div>
+
+          <div class="course-image__student">
+            <picture>
+              <source srcset="img/decor/student.webp" media="(max-width: 768px)">
+              <source srcset="img/decor/student.webp" type="image/webp">
+              <img class="student" src="img/decor/student.jpg" alt="">
+            </picture>
+          </div>
+
+          <div class="course-image__desc">
+            <div class="course-image__icon  course-image__icon--computer"></div>
+            <!-- <div class="course-image__icon course-image__icon--video"></div> -->
+            <div class="course-image__desc-content">
+              <div class="course-image__title">Занятия онлайн</div>
+              <div class="course-image__subtitle">Проработаем все темы и достигнем вашей цели.</div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="course__content course-content">
+          <div class="course-content__tags tags-course">
+            <ul class="tags-course__list">
+              <li class="tags-course__item">курс обучения</li>
+              <li class="tags-course__item">9 класс</li>
+              <li class="tags-course__item">подготовка к ОГЭ</li>
+              <li class="tags-course__item">онлайн</li>
+              <li class="tags-course__item tags-course__item--active">идет запись</li>
+            </ul>
+          </div>
+          <div class="course-content__title">
+            <h3>Курс подготовки к ОГЭ 2024 с любого уровня</h3>
+          </div>
+          <div class="course-content__desc">
+            <p>Пройдем всю программу по русскому языку за 5–9 классы, разберём абсолютно все необходимые темы.</p>
+            <p>Мы подготовили
+              компактные и удобные для запоминания таблицы с теорией.</p>
+
+            <p>Записи занятий будут доступны для повторения. Вы будете
+              тренироваться только на актуальных материалах (с учетом изменений ФИПИ).</p>
+            <p>Тесты, сочинения и изложения, домашние работы и
+              пробники.</p>
+          </div>
+          <div class="course-content__btns">
+            <a class="btn btn--comment" href="https://forms.gle/j7UifkRJZ12PgXzTA">Предварительная запись</a>
+          </div>
+        </div>
+
+        <div class="course__about about-course">
+
+          <div class="tabs about-course__tabs">
+
+            <!-- Разделы курса -->
+            <div class="tabs__nav about-course__nav">
+              <button class="about-course__btn _tab-btn" type="button" data-tab="#aboutOGE">Что входит в курс</button>
+              <button class="about-course__btn _tab-btn" type="button" data-tab="#priceOGE">Стоимость</button>
+              <button class="about-course__btn _tab-btn" type="button" data-tab="#programmOGE">Программа
+                занятий</button>
+            </div>
+
+            <!-- Описание курса -->
+            <div class="tabs__content about-course__content">
+
+              <div class="about-course__item about-course__item--list _tab-content" id="aboutOGE">
+                <ul>
+                  <li>
+                    <h4>Подготовка с нуля</h4>
+                    <p>Занятия для учеников с любым уровнем знаний: разберём программу по русскому языку за 5–9 классы
+                    </p>
+                  </li>
+                  <li>
+                    <h4>Подробно объясним всю теорию</h4>
+                    <p>На курсе вы разберёте и структурируете теорию, будете регулярно повторять пройденные темы, чтобы
+                      ничего не забыть к
+                      экзамену. Все наши материалы актуальны и учитывают изменения ФИПИ.</p>
+                  </li>
+                  <li>
+                    <h4>Занятия проходят в прямом эфире</h4>
+                    <p>Можно смотреть онлайн, а потом пересмотреть в записи.</p>
+                  </li>
+                  <li>
+                    <h4>59 занятий при групповом посещении</h4>
+                    <p>Занятие длится 2 академических часа. Занятия проходят онлайн по четвергам с 16:00 до 18:00 и
+                      субботам c 18:00 до 20:00 (мск).</p>
+                  </li>
+                  <li>
+                    <h4>Куратор курса ответит на вопросы</h4>
+                    <p>Мы знаем, как непросто бывает с подготовкой, и понимаем ваши переживания. Главная наша задача —
+                      помочь вам справиться со стрессом и страхом перед экзаменами.</p>
+                    <p>Куратор на связи с 9.00 до 21.00: в будни отвечает в течение 2 часов, а в выходные — в течение 4
+                      часов.</p>
+
+                  </li>
+                  <li>
+                    <h4>Можно учиться бесплатно!</h4>
+                    <p>У вас есть прекрасная возможность просматривать вебинар в роли слушателя. Темы по изложению и сочинению ОГЭ можно проходить без оплаты.</p>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="about-course__item about-course__item--price _tab-content" id="priceOGE">
+
+                <div class="price-card">
+                  <ul class="price-card__list">
+                    <li>
+                      <div class="price-card__img">
+                        <picture>
+                          <source srcset="img/decor/izlozhenie.webp" type="image/webp">
+                          <img src="img/decor/izlozhenie.jpg" alt="Изложение ОГЭ" width="400" height="400">
+                        </picture>
+                      </div>
+                      <div class="price-card__title"><span class="price-card__desc">Формат подготовки</span>
+                        <h4>Изложение ОГЭ</h4>
+                      </div>
+                      <div class="price-card__content">
+                        <ul>
+                          <li>
+                            <h5>В роли слушателя (посещение вебинара)</h5>
+                            <div class="course-price">Бесплатно</div>
+                            <button class="btn btn--border btn--small _btn">Подслушать</button>
+                          </li>
+                          <li>
+                            <h5>В роли ученика (доступна видеозапись вебинара)</h5>
+                            <div class="course-price">500 ₽ <span>/1 занятие</span></div>
+                            <button class="btn btn--small  btn--arrow _btn">Изложить</button>
+                          </li>
+                        </ul>
+                      </div>
+
+                    </li>
+                    <li>
+                      <div class="price-card__img">
+                        <picture>
+                          <source srcset="img/decor/sochinenie.webp" type="image/webp">
+                          <img src="img/decor/sochinenie.jpg" alt="Сочинение ОГЭ" width="400" height="400">
+                        </picture>
+                      </div>
+                      <div class="price-card__title"><span class="price-card__desc">Формат подготовки</span>
+                        <h4>Сочинение ОГЭ</h4>
+                      </div>
+                      <div class="price-card__content">
+                        <ul>
+                          <li>
+                            <h5>В роли слушателя (посещение вебинара)</h5>
+                            <div class="course-price">Бесплатно</div>
+                            <button class="btn btn--border btn--small _btn">Подслушать</button>
+                          </li>
+                          <li>
+                            <h5>В роли ученика (доступна видеозапись вебинара)</h5>
+                            <div class="course-price">500 ₽ <span>/1 занятие</span></div>
+                            <button class="btn btn--small btn--arrow _btn">Сочинить</button>
+                          </li>
+                        </ul>
+                      </div>
+
+                    </li>
+                    <li>
+                      <div class="price-card__img">
+                        <picture>
+                          <source srcset="img/decor/group.webp" type="image/webp">
+                          <img src="img/decor/group.jpg" alt="Подготовка к ОГЭ" width="400" height="400">
+                        </picture>
+                      </div>
+                      <div class="price-card__title"><span class="price-card__desc">Формат подготовки</span>
+                        <h4>Полноценный курс «Подготовка к ОГЭ»</h4>
+                      </div>
+                      <div class="price-card__content">
+                        <ul>
+                          <li>
+                            <h5>Группа до 12 человек, 8 уроков в месяц (по 90 мин.)</h5>
+                            <div class="course-price">7000 ₽ <span>/1 месяц</span></div>
+                            <button class="btn btn--arrow  btn--small _btn">Хочу в группу</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="price-card__img">
+                        <picture>
+                          <source srcset="img/decor/individualno.webp" type="image/webp">
+                          <img src="img/decor/individualno.jpg" alt="Индивидуальные уроки" width="400" height="400">
+                        </picture>
+                      </div>
+                      <div class="price-card__title"><span class="price-card__desc">Формат подготовки</span>
+                        <h4>Индивидуальные уроки</h4>
+                      </div>
+                      <div class="price-card__content">
+                        <ul>
+                          <li>
+                            <h5>При оплате за каждый урок (60 мин.)</h5>
+                            <div class="course-price">2500 ₽ <span>/1 занятие</span></div>
+                            <button class="btn btn--arrow  btn--small _btn">Хочу тет-а-тет</button>
+                          </li>
+                          <li>
+                            <h5>При оплате абонементом (60 мин.)</h5>
+                            <div class="course-price">2000 ₽ <span>/1 занятие</span></div>
+                            <button class="btn btn--arrow  btn--small _btn">Могу тет-а-тет</button>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="price-card__img">
+                        <picture>
+                          <source srcset="img/decor/consultation.webp" type="image/webp">
+                          <img src="img/decor/consultation.jpg" alt="Изложение ОГЭ">
+                        </picture>
+                      </div>
+                      <div class="price-card__title"><span class="price-card__desc">Дополнительно</span>
+                        <h4>Консультация, тестирование уровня знаний</h4>
+                      </div>
+                      <div class="price-card__content">
+                        <ul>
+                          <li>
+                            <h5>При платном обучении</h5>
+                            <div class="course-price">Бесплатно</div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+              <div class="about-course__item _tab-content" id="programmOGE">
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    </main>
+    <footer class="footer">
+  <div class="container"></div>
+</footer>
+
+  </div>
+</body>
+
+</html>
