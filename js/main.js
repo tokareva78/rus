@@ -161,24 +161,27 @@ __webpack_require__.r(__webpack_exports__);
 
 // Копирование из шапки в боковое меню==================
 
-const navFooter = document.querySelector(".nav__footer"),
-  headerPhone = document.querySelector(".nav-contacts__phone-header"),
-  headerBtn = document.querySelector(".nav-contacts__btn"),
-  headerSocial = document.querySelector(".nav-contacts__socials"),
-  headerMenu = document.querySelector('.header-menu'),
-  hamburgerSlim = document.querySelector('.hamburger-slim'),
-  overlay = document.querySelector('.overlay'),
+const overlay = document.querySelector('._overlay'),
   bodyPage = document.querySelector('.page__body'),
-  menu = document.querySelector('.nav');
+  headerBtn = document.querySelector("._header-btn"),
+  headerLogo = document.querySelector("._header-logo"),
+  mobileLogo = document.querySelector("._mobile-logo"),
+  headerSocial = document.querySelector("._header-socials"),
+  hamburgerSlim = document.querySelector('._hamburger'),
+  headerMenu = document.querySelector('._menu'),
+  menu = document.querySelector('._nav'),
+  navFooter = document.querySelector("._mobile-nav-footer"),
+  mobileMenu = document.querySelector('._mobile-nav'),
+  mobileNavMenu = document.querySelector('._mobile-nav-menu');
+mobileNavMenu.appendChild(headerMenu.cloneNode(true));
+mobileLogo.appendChild(headerLogo.cloneNode(true));
 navFooter.appendChild(headerBtn.cloneNode(true));
-navFooter.appendChild(headerPhone.cloneNode(true));
 navFooter.appendChild(headerSocial.cloneNode(true));
 
 // Меню// =======================================================================
 
 const initialMenu = () => {
   document.querySelector('.nav__list--dropdown').classList.remove('transformation');
-  // document.querySelector('.nav').querySelector('.nav__list').classList.remove('transformation');
   scrollTop();
 };
 const scrollTop = () => {
@@ -188,14 +191,16 @@ const scrollTop = () => {
   });
 };
 hamburgerSlim.addEventListener('click', function (event) {
-  if (this.classList.contains('active')) {
-    this.classList.remove('active');
+  if (this.classList.contains('open')) {
+    this.classList.remove('open');
     headerMenu.classList.remove('active');
+    mobileMenu.classList.remove('open');
     overlay.classList.remove('open');
     bodyPage.classList.remove('lock');
   } else {
-    this.classList.add('active');
+    this.classList.add('open');
     headerMenu.classList.add('active');
+    mobileMenu.classList.add('open');
     overlay.classList.add('open');
     bodyPage.classList.add('lock');
     initialMenu();
@@ -203,16 +208,18 @@ hamburgerSlim.addEventListener('click', function (event) {
 });
 overlay.addEventListener('click', function (event) {
   if (headerMenu.classList.contains('active')) {
-    hamburgerSlim.classList.remove('active');
+    hamburgerSlim.classList.remove('open');
     headerMenu.classList.remove('active');
+    mobileMenu.classList.remove('open');
     overlay.classList.remove('open');
     bodyPage.classList.remove('lock');
   }
 });
 window.addEventListener('keydown', function (event) {
   if (headerMenu.classList.contains('active') && event.keyCode === 27) {
-    hamburgerSlim.classList.remove('active');
+    hamburgerSlim.classList.remove('open');
     headerMenu.classList.remove('active');
+    mobileMenu.classList.remove('open');
     overlay.classList.remove('open');
     bodyPage.classList.remove('lock');
   }
@@ -221,7 +228,7 @@ window.addEventListener('keydown', function (event) {
 // Запускаем толко до 960px
 // if (document.documentElement.clientWidth < 960) {
 // находясь во всем меню - если кликаем на объект с классом nav__link--drop то меняем класс
-headerMenu.addEventListener('click', e => {
+mobileNavMenu.addEventListener('click', e => {
   if (e.target.classList.contains('nav__link--drop')) {
     e.preventDefault();
     // e.target.closest('.nav__list').classList.add('transformation');
@@ -233,9 +240,8 @@ headerMenu.addEventListener('click', e => {
   // если мы кликаем по прост ссылке, но не по дропссылке - то закрываем меню
   if (e.target.classList.contains('nav__link') && !e.target.classList.contains('nav__link--drop')) {
     // e.preventDefault();
-    // menu.classList.remove('open');
-    // overlay.classList.remove('open');
-    hamburgerSlim.classList.remove('active');
+    hamburgerSlim.classList.remove('open');
+    mobileMenu.classList.remove('open');
     headerMenu.classList.remove('active');
     overlay.classList.remove('open');
     bodyPage.classList.remove('lock');
