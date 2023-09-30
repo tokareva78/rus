@@ -2948,33 +2948,33 @@ div[class$=__title] h3 span {
 }
 .hero__content h1 {
   text-transform: uppercase;
-  font-size: 2.6rem;
+  font-size: 2.6rem !important;
   letter-spacing: 2px;
   line-height: 120%;
 }
 @media (max-width: 1070px) {
   .hero__content h1 {
-    font-size: 2rem;
+    font-size: 2rem !important;
   }
 }
 @media (max-width: 520px) {
   .hero__content h1 {
-    font-size: 1.6rem;
+    font-size: 1.6rem !important;
   }
 }
 .hero__content h1 span {
   color: var(--white-color) !important;
-  font-size: 3.2rem;
+  font-size: 3.2rem !important;
   text-shadow: 0.2rem 0.3rem 0px var(--blue-dark-color), 0.5rem 0.4rem 0px rgba(0, 0, 0, 0.15);
 }
 @media (max-width: 1070px) {
   .hero__content h1 span {
-    font-size: 2.4rem;
+    font-size: 2.4rem !important;
   }
 }
 @media (max-width: 520px) {
   .hero__content h1 span {
-    font-size: 2rem;
+    font-size: 2rem !important;
   }
 }
 .hero__content p {
