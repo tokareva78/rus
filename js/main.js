@@ -15,6 +15,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_header_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_header_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_tabs_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/tabs.js */ "./src/js/components/tabs.js");
 /* harmony import */ var _components_tabs_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_tabs_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_modals_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/modals.js */ "./src/js/components/modals.js");
+/* harmony import */ var _components_modals_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_modals_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_accordion_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/accordion.js */ "./src/js/components/accordion.js");
+/* harmony import */ var _components_accordion_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_accordion_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _components_form_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/form.js */ "./src/js/components/form.js");
+/* harmony import */ var _components_form_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_components_form_js__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
 
 
 
@@ -153,6 +162,160 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/js/components/accordion.js":
+/*!****************************************!*\
+  !*** ./src/js/components/accordion.js ***!
+  \****************************************/
+/***/ (() => {
+
+// Получаем все элементы аккордеона
+const accordions = document.querySelectorAll('.accordion');
+
+// Добавляем класс 'open' к первым элементам каждого аккордеона
+accordions.forEach(accordion => {
+  const accordionItems = accordion.querySelectorAll('.accordion__item');
+
+  // Если нужно изначально все вопросы скрыть, то уберите этот код
+  if (accordionItems.length > 0) {
+    const firstItem = accordionItems[0];
+    const btn = firstItem.querySelector('.accordion__btn');
+    const content = firstItem.querySelector('.accordion__content');
+    btn.classList.add('open');
+    content.classList.add('open');
+  }
+
+  // Добавляем обработчик событий на каждую кнопку аккордеона
+  accordionItems.forEach(item => {
+    const btn = item.querySelector('.accordion__btn');
+    const content = item.querySelector('.accordion__content');
+    btn.addEventListener('click', () => {
+      // При клике на кнопку проверяем, есть ли у контента класс 'open'
+      const isOpen = content.classList.contains('open');
+      const isOpenBtn = btn.classList.contains('open');
+      // Закрываем все открытые контенты аккордеона
+      accordionItems.forEach(item => {
+        const itemContent = item.querySelector('.accordion__content');
+        itemContent.classList.remove('open');
+        const itemBtn = item.querySelector('.accordion__btn');
+        itemBtn.classList.remove('open');
+      });
+
+      // Если контент был закрыт, то открываем его, добавляя класс 'open'
+      if (!isOpen) {
+        content.classList.add('open');
+        btn.classList.add('open');
+      }
+    });
+  });
+});
+
+/***/ }),
+
+/***/ "./src/js/components/form.js":
+/*!***********************************!*\
+  !*** ./src/js/components/form.js ***!
+  \***********************************/
+/***/ (() => {
+
+// document.addEventListener("DOMContentLoaded", function () {
+
+// ========= Валидация телефона =============
+var eventCalllback = function (e) {
+  var el = e.target,
+    clearVal = el.dataset.phoneClear,
+    pattern = el.dataset.phonePattern,
+    matrix_def = "+7(___) ___-__-__",
+    matrix = pattern ? pattern : matrix_def,
+    i = 0,
+    def = matrix.replace(/\D/g, ""),
+    val = e.target.value.replace(/\D/g, "");
+  if (clearVal !== 'false' && e.type === 'blur') {
+    if (val.length < matrix.match(/([\_\d])/g).length) {
+      e.target.value = '';
+      return;
+    }
+  }
+  if (def.length >= val.length) val = def;
+  e.target.value = matrix.replace(/./g, function (a) {
+    return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a;
+  });
+};
+var phone_inputs = document.querySelectorAll('[data-phone-pattern]');
+for (let elem of phone_inputs) {
+  for (let ev of ['input', 'blur', 'focus']) {
+    elem.addEventListener(ev, eventCalllback);
+  }
+}
+
+// Получаем все формы с классом .modal-content__form внутри элемента с классом .modal
+const forms = document.querySelectorAll('.form-section .form');
+
+// Для каждой формы устанавливаем обработчики событий
+forms.forEach(form => {
+  // Находим все элементы внутри формы, у которых есть атрибут data-reg
+  const inputElements = form.querySelectorAll('[data-reg]');
+  const button = form.querySelector('.form__submit');
+
+  // Добавляем обработчик события input для каждого элемента ввода
+  inputElements.forEach(el => {
+    el.setAttribute('is-valid', '0'); // Устанавливаем изначальное состояние валидации
+    el.addEventListener('input', inputHandler);
+  });
+
+  // Добавляем обработчик события click для кнопки отправки формы
+  button.addEventListener('click', buttonHandler);
+
+  // Функция обработки события input
+  function inputHandler(_ref) {
+    let {
+      target
+    } = _ref;
+    if (target.hasAttribute('data-reg')) {
+      inputCheck(target);
+    }
+  }
+
+  // Функция валидации ввода
+  function inputCheck(el) {
+    const inputValue = el.value;
+    const inputReg = el.getAttribute('data-reg');
+    const reg = new RegExp(inputReg);
+    if (reg.test(inputValue)) {
+      el.setAttribute('is-valid', '1');
+      // el.style.border = '1px solid #80ffaa';
+      el.style.color = '#01487a';
+    } else {
+      el.setAttribute('is-valid', '0');
+      // el.style.border = '1px solid #ff6b6b';
+      el.style.color = '#ff6b6b';
+    }
+  }
+
+  // Функция обработки события click для кнопки отправки формы
+  function buttonHandler(e) {
+    const allValid = [];
+    inputElements.forEach(el => {
+      allValid.push(el.getAttribute('is-valid'));
+    });
+    const isAllValid = allValid.every(val => val === '1');
+    if (!isAllValid) {
+      e.preventDefault();
+    }
+
+    // Если все поля валидны, установить значение для элемента с ".secret"
+    else {
+      const secret = form.querySelector('.form__secret');
+      if (secret) {
+        secret.value = 'secretkey';
+      }
+    }
+    // Если все поля валидны, установить значение для элемента с ".secret"
+  }
+});
+// });
+
+/***/ }),
+
 /***/ "./src/js/components/header.js":
 /*!*************************************!*\
   !*** ./src/js/components/header.js ***!
@@ -247,6 +410,100 @@ mobileNavMenu.addEventListener('click', e => {
     bodyPage.classList.remove('lock');
     // unlockScroll();
   }
+});
+
+/***/ }),
+
+/***/ "./src/js/components/modals.js":
+/*!*************************************!*\
+  !*** ./src/js/components/modals.js ***!
+  \*************************************/
+/***/ (() => {
+
+// Показать модальное окно при клике на элемент с атрибутом data-modal-target
+var openModalTriggers = document.querySelectorAll('[data-modal-target]');
+var modalCloseButtons = document.querySelectorAll('._modalClose');
+for (var i = 0; i < openModalTriggers.length; i++) {
+  openModalTriggers[i].addEventListener('click', function (event) {
+    event.preventDefault();
+    var modalId = this.getAttribute('data-modal-target');
+    openModal(modalId);
+  });
+}
+for (var i = 0; i < modalCloseButtons.length; i++) {
+  modalCloseButtons[i].addEventListener('click', closeModal);
+}
+
+// Открыть модальное окно
+function openModal(modalId) {
+  var modal = document.getElementById(modalId);
+  var body = document.querySelector('body');
+  if (modal) {
+    // modal.style.display = 'block';
+    modal.classList.add('modal--open');
+    body.classList.add('modal-open');
+  }
+}
+
+// Закрыть модальное окно
+function closeModal() {
+  var modals = document.querySelectorAll('.modal');
+  var body = document.querySelector('body');
+  for (var i = 0; i < modals.length; i++) {
+    // modals[i].style.display = 'none';
+    modals[i].classList.remove('modal--open');
+  }
+  body.classList.remove('modal-open');
+}
+
+// Закрыть модальное окно при клике вне его области
+window.addEventListener('click', function (event) {
+  var modals = document.querySelectorAll('.modal');
+  var body = document.querySelector('body');
+  for (var i = 0; i < modals.length; i++) {
+    if (event.target === modals[i]) {
+      // modals[i].style.display = 'none';
+      modals[i].classList.remove('modal--open');
+      body.classList.remove('modal-open');
+    }
+  }
+});
+
+// ====================== Вставляем данные в модальное окно =============================
+
+// Получаем все элементы с классом ._btn
+const btns = document.querySelectorAll('._btn');
+
+// Добавляем обработчик событий на каждую кнопку
+btns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    // Получаем значение атрибута aria-label кнопки
+    const btnAriaLabel = btn.getAttribute('aria-label');
+    // ! =========
+    const btnDataImg = btn.getAttribute('data-img-form');
+
+    // Находим модальное окно по атрибуту data-modal-target
+    const modalTarget = btn.getAttribute('data-modal-target');
+    const modal = document.getElementById(modalTarget);
+
+    // Находим заголовок и скрытое поле в модальном окне
+    const modalTitle = modal.querySelector('.modal-title');
+    const modalHiddenInput = modal.querySelector('.form__hidden-input');
+
+    // Находим кнопку в форме
+    const modalSubmitBtn = modal.querySelector('._submit');
+
+    // ! =====
+    const modalRightImg = modal.querySelector('.modal-content__img');
+    modalRightImg.src = btnDataImg;
+
+    // Задаем значения заголовка и скрытого поля в модальном окне
+    modalTitle.innerHTML = btnAriaLabel;
+    modalHiddenInput.value = btnAriaLabel;
+    // modalRightImg.att =
+    // Копируем текст кнопки ._btn в текст кнопки .modal-content__submit
+    modalSubmitBtn.textContent = btn.textContent;
+  });
 });
 
 /***/ }),

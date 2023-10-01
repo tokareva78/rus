@@ -919,8 +919,8 @@
           <div class="price-card__header">
             <div class="price-card__img">
               <picture>
-                <source srcset="img/decor/group.webp" type="image/webp">
-                <img src="img/decor/group.jpg" alt="Курс Подготовка к ЕГЭ" width="400" height="400">
+                <source srcset="img/decor/group-2.webp" type="image/webp">
+                <img src="img/decor/group-2.jpg" alt="Курс Подготовка к ЕГЭ" width="400" height="400">
               </picture>
             </div>
             <div class="price-card__title">
@@ -958,8 +958,11 @@
                   <li><i class="bx bx-check-double"></i>Всегда можно перейти на платный тариф</li>
                 </ul>
                 <div class="price-card__course-price">500 ₽ <span>1 занятие (90 мин.)</span></div>
-                <div class="price-card__course-btn"><button class="btn btn--border fx--g5 fx--g5 _btn">Подслушать<i
-                      class="bx bx-user-voice bx-burst-hover bx-sm"></i></button></div>
+                <div class="price-card__course-btn">
+                  <button class="btn btn--border fx--g5 fx--g5 _btn" type="button" data-modal-target="modal"
+                    aria-label="Посетить вебинар в роли слушателя" data-img-form="img/decor/group-2.webp">Подслушать<i
+                      class="bx bx-user-voice bx-burst-hover bx-sm"></i></button>
+                </div>
 
               </li>
               <li>
@@ -977,7 +980,8 @@
                 <div class="price-card__course-price">7 000 ₽ <span>1 месяц (8 занятий
                     по 90 мин.)</span></div>
                 <div class="price-card__course-btn">
-                  <button class="btn btn--sec fx--g5 _btn">Хочу в группу<i
+                  <button class="btn btn--sec fx--g5 _btn" type="button" data-modal-target="modal"
+                    aria-label="Хочу попасть в группу подготовки ЕГЭ" data-img-form="img/decor/group-2.webp">Хочу в группу<i
                       class="bx bx-like bx-burst-hover bx-sm"></i></button>
                 </div>
 
@@ -1027,7 +1031,8 @@
                   <li><i class="bx bx-check-double"></i>Личный чат с преподавателем</li>
                 </ul>
                 <div class="price-card__course-price">2 500 ₽ <span>1 занятие (60 мин.)</span></div>
-                <div class="price-card__course-btn"><button class="btn btn--sec fx--g5 _btn">Хочу тет-а-тет<i
+                <div class="price-card__course-btn"><button class="btn btn--sec fx--g5 _btn" data-modal-target="modal"
+                    aria-label="Хочу готовиться к ЕГЭ индивидуально" data-img-form="img/decor/individualno.webp">Хочу тет-а-тет<i
                       class="bx bx-like bx-burst-hover bx-sm"></i></button></div>
 
               </li>
@@ -1043,7 +1048,8 @@
                 </ul>
                 <div class="price-card__course-price">2000 ₽ <span>1 занятие (60 мин.)</span></div>
                 <div class="price-card__course-btn">
-                  <button class="btn btn--sec fx--g5 _btn">Могу тет-а-тет<i
+                  <button class="btn btn--sec fx--g5 _btn" data-modal-target="modal"
+                    aria-label="Хочу готовиться к ЕГЭ индивидуально" data-img-form="img/decor/individualno.webp">Могу тет-а-тет<i
                       class="bx bx-like bx-burst-hover bx-sm"></i></button>
                 </div>
 
@@ -1055,6 +1061,7 @@
     </div>
   </div>
 </section>
+
       <section class="advantages-section main__advantages-section">
   <div class="advantages-section__container container">
     <div class="advantages">
@@ -1099,6 +1106,94 @@
   </div>
 </section>
 
+      <div id="modal" class="modal">
+  <div class="modal-content">
+
+    <div class="_modalClose modal-content__close">
+      <div class="close-container">
+        <div class="leftright"></div>
+        <div class="rightleft"></div>
+      </div>
+    </div>
+    <div class="modal-content__left">
+      <div class="modal-content__top">
+        <h2 class="modal-title title title--h2 title--line"></h2>
+      </div>
+      <div class="form-section">
+        <form action="telegram.php" method="post" class="form form-section__content" name="form">
+          <input type="hidden" class="form__hidden-input" name="site" value="">
+          <input type="hidden" class="form__hidden-input form__secret" name="secret" value="">
+
+          <div class="input-block">
+            <label for="name" class="input-label">Только русские буквы</label>
+            <input type="text" class="form__input" placeholder="Ваше имя" name="name" data-reg="^[А-ЯЁа-яё\s]{1,30}$"
+              required>
+          </div>
+          <div class="input-block">
+            <label for="phone" class="input-label">В формате (9XX)XXX–XX–XX</label>
+            <input type="tel" class="form__input" placeholder="Введите телефон" name="phone"
+              data-reg="^\+7\(9\d{2}\)\s\d{3}\-\d{2}\-\d{2}$" data-phone-pattern data-phone-clear="false" required>
+          </div>
+          <!-- <label class="form__input-box">
+            <input type="text" class="form__input" placeholder="Ваше имя" name="name" data-reg="^[А-ЯЁа-яё\s]{1,30}$"
+              required>
+            <div class="form__label"><i>* Только русские буквы</i></div>
+          </label> -->
+          <!-- <label class="form__input-box">
+            <input type="tel" class="form__input" placeholder="Введите телефон" name="phone"
+              data-reg="^\+7\(9\d{2}\)\s\d{3}\-\d{2}\-\d{2}$" data-phone-pattern data-phone-clear="false" required>
+          </label> -->
+          <div class="form__button">
+            <button class="btn btn--sm btn--sec _submit" type="submit"></button>
+            <div class="form__pers">Отправляя форму, Вы даете <a href="politic.html">согласие на обработку
+              персональных данных</a>.
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal-content__right">
+      <img class="modal-content__img" src="" alt="">
+    </div>
+
+  </div>
+</div>
+
+<!-- <div class="modal" id="modal">
+  <div class="modal-container">
+    <div class="modal-left">
+      <h1 class="modal-title">Welcome!</h1>
+      <p class="modal-desc">Fanny pack hexagon food truck, street art waistcoat kitsch.</p>
+      <div class="input-block">
+        <label for="email" class="input-label">Email</label>
+        <input type="email" name="email" id="email" placeholder="Email">
+      </div>
+      <div class="input-block">
+        <label for="password" class="input-label">Password</label>
+        <input type="password" name="password" id="password" placeholder="Password">
+      </div>
+      <div class="modal-buttons">
+        <a href="" class="">Forgot your password?</a>
+        <button class="input-button">Login</button>
+      </div>
+        </div>
+    <div class="modal-right">
+      <img
+        src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=dfd2ec5a01006fd8c4d7592a381d3776&auto=format&fit=crop&w=1000&q=80"
+        alt="">
+    </div>
+    <button class="icon-button close-button">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+        <path
+          d="M 25 3 C 12.86158 3 3 12.86158 3 25 C 3 37.13842 12.86158 47 25 47 C 37.13842 47 47 37.13842 47 25 C 47 12.86158 37.13842 3 25 3 z M 25 5 C 36.05754 5 45 13.94246 45 25 C 45 36.05754 36.05754 45 25 45 C 13.94246 45 5 36.05754 5 25 C 5 13.94246 13.94246 5 25 5 z M 16.990234 15.990234 A 1.0001 1.0001 0 0 0 16.292969 17.707031 L 23.585938 25 L 16.292969 32.292969 A 1.0001 1.0001 0 1 0 17.707031 33.707031 L 25 26.414062 L 32.292969 33.707031 A 1.0001 1.0001 0 1 0 33.707031 32.292969 L 26.414062 25 L 33.707031 17.707031 A 1.0001 1.0001 0 0 0 32.980469 15.990234 A 1.0001 1.0001 0 0 0 32.292969 16.292969 L 25 23.585938 L 17.707031 16.292969 A 1.0001 1.0001 0 0 0 16.990234 15.990234 z">
+        </path>
+      </svg>
+    </button>
+  </div>
+  <button class="modal-button">Click here to login</button>
+</div> -->
+
     </main>
     <footer class="footer-section">
   <div class="container">
@@ -1114,8 +1209,8 @@
         <!-- LOGO -->
         <div class="footer__content">
           <p>@ 2023 ИП Дворецкий В.Е.</p>
-          <p><a href="#">Публичная оферта</a></p>
-          <p><a href="#">Политика конфиденциальности</a></p>
+          <p><a href="publichnaya-oferta.html">Публичная оферта</a></p>
+          <p><a href="politic.html">Политика конфиденциальности</a></p>
         </div>
 
       </div>
