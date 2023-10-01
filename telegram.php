@@ -4,7 +4,7 @@ $phone = $_POST['phone'];
 $site = $_POST['site'];
 
 $token = '6569980160:AAGvLUx7Ygjx0i8LUHdi7TZWDRRmrZJcGRM';
-$chat_id = '-4064135071';
+$chat_id = '-4064135071'; // -4029074444
 $arr = [
   'Форма: ' => $site,
   'Имя пользователя: ' => $name,
