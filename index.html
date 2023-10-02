@@ -164,7 +164,7 @@
         <div class="header__connection">
           <!-- Заказать звонок -->
           <div class="header-btn _header-btn">
-            <button class="btn btn--border btn--sm _btn">Заказать звонок</button>
+            <button class="btn btn--border btn--sm _btn" data-modal-target="modal" aria-label="Заказать звонок" data-img-form="img/decor/group-7.webp">Заказать звонок</button>
           </div>
           <!-- Заказать звонок -->
           <!-- Социальные сети -->
@@ -246,7 +246,7 @@
             <li>Работающая методика онлайн‑обучения</li>
           </ul>
           <div class="hero__btns">
-            <button class="btn btn--w btn--mb _btn">Консультация</button>
+            <button class="btn btn--w btn--mb _btn" data-modal-target="modal" aria-label="Помочь выбрать курс?" data-img-form="img/decor/group-14.webp">Консультация</button>
             <a href="#!" class="btn btn--link btn--link-mb">Выбрать курс
               <svg viewBox="0 0 70 36">
                 <path
@@ -321,7 +321,7 @@
       <div class="wool__content">
         <h3><span>На одной волне</span> со знаниями</h3>
         <p>Я говорю с учениками на их языке и знаю, как заинтересовать предметом.</p>
-        <a href="#repetitor" class="btn btn--comment btn--sm">О репетиторе</a>
+        <a href="repetitor.html" class="btn btn--comment btn--sm">О репетиторе</a>
       </div>
 
       <div class="wool__img">
@@ -358,13 +358,14 @@
       <div class="wool__content">
         <h3>Ответим на все ваши вопросы</h3>
         <p>и поможем выбрать программу обучения</p>
-        <a href="" class="btn btn--link">Консультация
+        <button class="btn btn--link _btn" data-modal-target="modal" aria-label="Помочь выбрать курс?"
+          data-img-form="img/decor/group-14.webp">Консультация
           <svg viewBox="0 0 70 36">
             <path
               d="M6.9739 30.8153H63.0244C65.5269 30.8152 75.5358 -3.68471 35.4998 2.81531C-16.1598 11.2025 0.894099 33.9766 26.9922 34.3153C104.062 35.3153 54.5169 -6.68469 23.489 9.31527">
             </path>
           </svg>
-        </a>
+        </button>
       </div>
     </div>
   </div>
@@ -387,6 +388,7 @@
           <p>@ 2023 ИП Дворецкий В.Е.</p>
           <p><a href="publichnaya-oferta.html">Публичная оферта</a></p>
           <p><a href="politic.html">Политика конфиденциальности</a></p>
+            <p>Создание и сопровождение сайтов <a href="politic.html">АннаТок</a></p>
         </div>
 
       </div>
@@ -453,7 +455,7 @@
 </footer>
 
   </div>
- <div id="modal" class="modal">
+<div id="modal" class="modal">
   <div class="modal-content">
 
     <div class="_modalClose modal-content__close">
@@ -512,8 +514,9 @@
   </div>
 </div>
 
+<script src="js/jquery-3.7.1.min.js"></script>
 <script src="js/axios.min.js"></script>
-<script src="https://unpkg.com/imask"></script>
+<script src="js/imask.js"></script>
 
 </body>
 

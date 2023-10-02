@@ -164,7 +164,7 @@
         <div class="header__connection">
           <!-- Заказать звонок -->
           <div class="header-btn _header-btn">
-            <button class="btn btn--border btn--sm _btn">Заказать звонок</button>
+            <button class="btn btn--border btn--sm _btn" data-modal-target="modal" aria-label="Заказать звонок" data-img-form="img/decor/group-7.webp">Заказать звонок</button>
           </div>
           <!-- Заказать звонок -->
           <!-- Социальные сети -->
@@ -212,7 +212,48 @@
     <main class="main">
       <section class="thanks-section main__thanks-section">
   <div class="thanks-section__container container">
-    <h1>Спасибо!</h1>
+    <div class="thanks-section__content">
+      <div class="thanks-section__svg">
+        <svg width="380px" height="500px" viewBox="0 0 837 1045" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+          <path d="M353,9 L626.664028,170 L626.664028,487 L353,642 L79.3359724,487 L79.3359724,170 L353,9 Z"
+            id="Polygon-1" stroke="#007FB2" stroke-width="6" sketch:type="MSShapeGroup"></path>
+          <path d="M78.5,529 L147,569.186414 L147,648.311216 L78.5,687 L10,648.311216 L10,569.186414 L78.5,529 Z"
+            id="Polygon-2" stroke="#EF4A5B" stroke-width="6" sketch:type="MSShapeGroup"></path>
+          <path d="M773,186 L827,217.538705 L827,279.636651 L773,310 L719,279.636651 L719,217.538705 L773,186 Z"
+            id="Polygon-3" stroke="#795D9C" stroke-width="6" sketch:type="MSShapeGroup"></path>
+          <path d="M639,529 L773,607.846761 L773,763.091627 L639,839 L505,763.091627 L505,607.846761 L639,529 Z"
+            id="Polygon-4" stroke="#aac5d5" stroke-width="6" sketch:type="MSShapeGroup"></path>
+          <path d="M281,801 L383,861.025276 L383,979.21169 L281,1037 L179,979.21169 L179,861.025276 L281,801 Z"
+            id="Polygon-5" stroke="#fecdc9" stroke-width="6" sketch:type="MSShapeGroup"></path>
+        </g>
+      </svg>
+      </div>
+
+      <div class="thanks-section__message message-box">
+        <h1>404</h1>
+        <p>Страница не найдена</p>
+        <div class="message-box__btns buttons-con">
+          <div class="action-link-wrap">
+            <!-- <a onclick="history.back(-1)" class="link-button link-back-button">Вернуться</a>
+        <a href="index.html" class="link-button">На главную</a> -->
+            <a onclick="history.back(-1)" class="btn btn--wl"><i
+                class="bx bx-left-arrow-alt bx-fade-left"></i>Вернуться</a>
+            <!-- <a onclick="history.back(-1)" class="btn btn--w btn--mb">Вернуться</a> -->
+            <a href="index.html" class="btn btn--link">На главную
+              <svg viewBox="0 0 70 36">
+                <path
+                  d="M6.9739 30.8153H63.0244C65.5269 30.8152 75.5358 -3.68471 35.4998 2.81531C-16.1598 11.2025 0.894099 33.9766 26.9922 34.3153C104.062 35.3153 54.5169 -6.68469 23.489 9.31527">
+                </path>
+              </svg>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -233,6 +274,7 @@
           <p>@ 2023 ИП Дворецкий В.Е.</p>
           <p><a href="publichnaya-oferta.html">Публичная оферта</a></p>
           <p><a href="politic.html">Политика конфиденциальности</a></p>
+            <p>Создание и сопровождение сайтов <a href="politic.html">АннаТок</a></p>
         </div>
 
       </div>
@@ -299,6 +341,7 @@
 </footer>
 
   </div>
+
   <div id="modal" class="modal">
   <div class="modal-content">
 
@@ -358,8 +401,9 @@
   </div>
 </div>
 
+  <script src="js/jquery-3.7.1.min.js"></script>
 <script src="js/axios.min.js"></script>
-<script src="https://unpkg.com/imask"></script>
+<script src="js/imask.js"></script>
 
 </body>
 
