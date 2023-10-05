@@ -23,6 +23,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_accordion_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_components_accordion_js__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _components_form_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/form.js */ "./src/js/components/form.js");
 /* harmony import */ var _components_form_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_components_form_js__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _components_swiper_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/swiper.js */ "./src/js/components/swiper.js");
+/* harmony import */ var _components_swiper_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_components_swiper_js__WEBPACK_IMPORTED_MODULE_7__);
 
 
 
@@ -30,6 +32,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+// import './components/faqs.js';
 
 /***/ }),
 
@@ -40,39 +44,46 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (() => {
 
 // Получаем все элементы аккордеона
-const accordions = document.querySelectorAll('.accordion');
+const accordions = document.querySelectorAll('._accordion');
 
 // Добавляем класс 'open' к первым элементам каждого аккордеона
 accordions.forEach(accordion => {
-  const accordionItems = accordion.querySelectorAll('.accordion__item');
+  const accordionItems = accordion.querySelectorAll('._accordionItem');
 
   // Если нужно изначально все вопросы скрыть, то уберите этот код
   if (accordionItems.length > 0) {
     const firstItem = accordionItems[0];
-    const btn = firstItem.querySelector('.accordion__btn');
-    const content = firstItem.querySelector('.accordion__content');
+    const wrapper = firstItem.querySelector('._accordionWrapper');
+    const btn = firstItem.querySelector('._accordionBtn');
+    const content = firstItem.querySelector('._accordionContent');
+    wrapper.classList.add('open');
     btn.classList.add('open');
     content.classList.add('open');
   }
 
   // Добавляем обработчик событий на каждую кнопку аккордеона
   accordionItems.forEach(item => {
-    const btn = item.querySelector('.accordion__btn');
-    const content = item.querySelector('.accordion__content');
+    const wrapper = item.querySelector('._accordionWrapper');
+    const btn = item.querySelector('._accordionBtn');
+    const content = item.querySelector('._accordionContent');
     btn.addEventListener('click', () => {
       // При клике на кнопку проверяем, есть ли у контента класс 'open'
+      const isOpenWrapper = wrapper.classList.contains('open');
       const isOpen = content.classList.contains('open');
       const isOpenBtn = btn.classList.contains('open');
       // Закрываем все открытые контенты аккордеона
       accordionItems.forEach(item => {
-        const itemContent = item.querySelector('.accordion__content');
+        const itemWrapper = item.querySelector('._accordionWrapper');
+        itemWrapper.classList.remove('open');
+        const itemContent = item.querySelector('._accordionContent');
         itemContent.classList.remove('open');
-        const itemBtn = item.querySelector('.accordion__btn');
+        const itemBtn = item.querySelector('._accordionBtn');
         itemBtn.classList.remove('open');
       });
 
       // Если контент был закрыт, то открываем его, добавляя класс 'open'
       if (!isOpen) {
+        wrapper.classList.add('open');
         content.classList.add('open');
         btn.classList.add('open');
       }
@@ -94,6 +105,7 @@ if (document.querySelector('.form')) {
     const submitBtn = form.querySelector('._submit');
 
     // ================= Выпадающий список =================
+
     form.querySelectorAll('._selectWrapper').forEach(function (selectWrapper) {
       const selectInput = selectWrapper.querySelector('._select');
       const selectList = selectWrapper.querySelector('._select-list');
@@ -128,18 +140,57 @@ if (document.querySelector('.form')) {
       });
     });
 
-    // ================= Маска телефона и активная кнопка отправки =================
-    const mask = new IMask(phoneInput, {
-      mask: "+{7} (000) 000-00-00"
+    // ================= Маска телефона и имени =================
+    const mask = (dataValue, options) => {
+      // создаем универсальную функцию
+      const elements = document.querySelectorAll(`[data-mask="${dataValue}"]`); // ищем поля ввода по селектору с переданным значением data-атрибута
+      if (!elements) return; // если таких полей ввода нет, прерываем функцию
+
+      elements.forEach(el => {
+        // для каждого из полей ввода
+        IMask(el, options); // инициализируем плагин imask для необходимых полей ввода с переданными параметрами маски
+      });
+    };
+
+    // Маска для номера телефона
+    mask('phone', {
+      mask: '+{7} (#00) 000-00-00',
+      definitions: {
+        '#': /[012345679]/
+      },
+      lazy: false
     });
-    phoneInput.addEventListener('input', phoneInputHandler);
-    function phoneInputHandler() {
-      if (mask.masked.isComplete) {
-        submitBtn.classList.add('_submit--active');
-      } else {
-        submitBtn.classList.remove('_submit--active');
-      }
-    }
+
+    // Маска для имени
+    mask('name', {
+      mask: /^[А-Яа-яA-Za-z\s'-]{1,25}$/,
+      lazy: false
+    });
+
+    // ================= Активная кнопка отправки =================
+
+    // const mask = new IMask(phoneInput, {
+    //   mask: "+{7} (000) 000-00-00",
+    // });
+
+    // ._submit {
+    //   pointer-events: none;
+    // // ._submit--active
+    //   &--active {
+    //     pointer-events: auto;
+    //   }
+    // }
+
+    // phoneInput.addEventListener('input', phoneInputHandler);
+
+    // function phoneInputHandler() {
+    //   if (mask.masked.isComplete) {
+    //     submitBtn.classList.add('_submit--active');
+    //   } else {
+    //     submitBtn.classList.remove('_submit--active');
+    //   }
+    // }
+
     // ================= Отправка сообщения в телеграм =================
     const TOKEN = "6569980160:AAGvLUx7Ygjx0i8LUHdi7TZWDRRmrZJcGRM";
     const CHAT_ID = "-1001970765522";
@@ -415,6 +466,51 @@ if (window.NodeList && !NodeList.prototype.forEach) {
       callback.call(thisArg, this[i], i, this);
     }
   };
+}
+
+/***/ }),
+
+/***/ "./src/js/components/swiper.js":
+/*!*************************************!*\
+  !*** ./src/js/components/swiper.js ***!
+  \*************************************/
+/***/ (() => {
+
+if (true) {
+  const swiperCarousel = new Swiper(".carousel", {
+    grabCursor: true,
+    loop: true,
+    // slidesPerView: 1,
+    // spaceBetween: 30,
+    centeredSlides: true,
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+      460: {
+        slidesPerView: 1.5,
+        spaceBetween: 20
+      },
+      // 660: {
+      //   slidesPerView: 1.5,
+      //   spaceBetween: 20,
+      // },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 40
+      },
+      1360: {
+        slidesPerView: 3,
+        spaceBetween: 30
+      }
+    }
+  });
 }
 
 /***/ }),
