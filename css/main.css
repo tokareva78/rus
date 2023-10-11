@@ -3515,45 +3515,21 @@ div[class$=__title] h3 span {
 }
 .tariffs-section__container {
   position: relative;
+  width: 100%;
 }
-.tariffs-section__container::before {
-  content: "";
+.tariffs-section__decor {
   position: absolute;
   display: block;
   background-color: var(--blue-light-color-03);
-  width: 100%;
+  width: calc(100% - 2 * (var(--container-offset)));
   height: 30rem;
   top: -60px;
-  -webkit-transform: translateX(-2rem);
-  -ms-transform: translateX(-2rem);
-  transform: translateX(-2rem);
+  left: 0;
   border-radius: var(--br);
   z-index: -1;
+  margin-left: var(--container-offset);
 }
-.tariffs-section::after {
-  content: "";
-  position: absolute;
-  background: url(../img/svg/orn-8.svg) 0px 0px/contain no-repeat;
-  width: 480px;
-  height: 480px;
-  left: -50px;
-  bottom: -100px;
-  -webkit-transform: rotate(40deg);
-  -ms-transform: rotate(40deg);
-  transform: rotate(40deg);
-  opacity: 0.1;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.tariffs-section__title {
-  margin-bottom: 2rem;
-  text-align: center;
-  padding: 0 2rem;
-  position: relative;
-}
-.tariffs-section__title::before {
+.tariffs-section__decor::before {
   content: "";
   position: absolute;
   background: url(../img/svg/orn.svg) 0px 0px/contain no-repeat;
@@ -3571,7 +3547,7 @@ div[class$=__title] h3 span {
   user-select: none;
   z-index: -1;
 }
-.tariffs-section__title::after {
+.tariffs-section__decor::after {
   content: "";
   position: absolute;
   background: url(../img/svg/orn-8.svg) 0px 0px/contain no-repeat;
@@ -3588,6 +3564,12 @@ div[class$=__title] h3 span {
   -ms-user-select: none;
   user-select: none;
   z-index: -1;
+}
+.tariffs-section__title {
+  margin-bottom: 2rem;
+  text-align: center;
+  padding: 0 2rem;
+  position: relative;
 }
 .tariffs-section__title h3 {
   font-size: clamp(1.3rem, 1.4107rem + 0.2857vw, 1.6rem) !important;
