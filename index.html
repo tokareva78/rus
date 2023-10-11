@@ -210,21 +210,7 @@
 </header>
 
     <main class="main">
-      <!-- <h1>Проверка шрифта первый</h1>
-<h2>Проверка шрифта второй</h2>
-<p>Проверка шрифта</p>
-<picture>
-  <source srcset="img/cover.webp" media="(max-width: 768px)">
-  <source srcset="img/cover.webp" type="image/webp">
-  <img src="img/cover.jpg" alt="">
-</picture>
-<picture>
-  <source srcset="img/Цветовая-палитра.webp" media="(max-width: 768px)">
-  <source srcset="img/Цветовая-палитра.webp" type="image/webp">
-  <img src="img/Цветовая-палитра.jpg" alt="">
-</picture> -->
-
-<section class="hero-section main__hero-section">
+      <section class="hero-section main__hero-section">
   <div class="hero-section__container container">
     <div class="hero">
       <div class="hero__wrapper">
@@ -246,7 +232,7 @@
             <li>Работающая методика онлайн‑обучения</li>
           </ul>
           <div class="hero__btns">
-            <button class="btn btn--w btn--mb _btn" data-modal-target="modal" aria-label="Помочь выбрать курс?" data-img-form="img/decor/group-14.webp">Консультация</button>
+            <button class="btn btn--w btn--mb _btn" data-modal-target="modal" aria-label="Помочь выбрать курс?" data-img-form="img/decor/tutor-3.webp">Консультация</button>
             <a href="#courses" class="btn btn--link btn--link-mb">Выбрать курс
               <svg viewBox="0 0 70 36">
                 <path
@@ -379,7 +365,7 @@
        <section class="carousel-section main__carousel-section" id="courses">
   <div class="carousel-section__container container">
     <div class="carousel-section__title">
-      <h2>Выберите направление подготовки</h2>
+      <h2>Начни подготовку к экзамену</h2>
     </div>
     <div class="carousel swiper">
       <ul class="carousel__list swiper-wrapper">
@@ -544,6 +530,59 @@
       <div class="swiper-button-next"></div>
 
     </div>
+  </div>
+</section>
+
+      <section class="tutor-section main__tutor-section">
+  <div class="tutor-section__container container">
+    <div class="tutor-section__title">
+      <div class="tutor-section__sup">Ваш репетитор</div>
+      <h2>Светлана Дворецкая</h2>
+    </div>
+    <div class="tutor">
+      <picture>
+        <source srcset="img/decor/tutor-3.webp" media="(max-width: 768px)">
+        <source srcset="img/decor/tutor-3.webp" type="image/webp">
+        <img src="img/decor/tutor-3.jpg" alt="">
+      </picture>
+      <p>Тренер и методист по эйдетике и скорочтению. Учу запоминать информацию быстро, легко и надолго.</p>
+      <p>Работаю с учениками по своей системе обучения с 2010 года.</p>
+      <p>Автор программы для школьников <strong>«Учись учиться»</strong>.</p>
+
+      <p>Проводила курсы повышения квалификации учителей частных школ (г.Москва).</p>
+      <p>Преподаю русский язык по <strong>своей уникальной методике</strong> с 2014 года.</p>
+      <p>Помогаю быстро закрыть пробелы в знаниях, <strong>многие ученики с двойками</strong> за пробный ОГЭ через
+        год работы со мной <strong>сдавали экзамен на 4 и 5</strong>.</p>
+      <p>Готовлю к ЕГЭ по русскому языку уже 8 лет. <strong>Средний балл учеников за 8 лет — от 85 до 97</strong>.
+      </p>
+      <h3>Специалист образовательной и антистрессовой кинезиологии:</h3>
+      <ol>
+        <li>Курс <br><b>«Гимнастики мозга»</b> <br>(«Brain Gym» Dr. Paul Dennison (USA))</li>
+        <li>Курс <br><b>«Оптимальная организация мозга»</b></li>
+        <li>Курс <br><b>«Антистрессовая кинезиология»</b></li>
+      </ol>
+      <!-- <div class="tutor__content">
+        <div class="tutor__item">
+
+        </div>
+        <div class="tutor__item">
+
+        </div>
+        <div class="tutor__item">
+
+        </div>
+
+        <div class="tutor__img">
+          <picture>
+            <source srcset="img/decor/tutor-3.webp" media="(max-width: 768px)">
+            <source srcset="img/decor/tutor-3.webp" type="image/webp">
+            <img src="img/decor/tutor-3.jpg" alt="">
+          </picture>
+        </div>
+      </div> -->
+
+    </div>
+
   </div>
 </section>
 
@@ -775,16 +814,16 @@
           <input type="hidden" class="form__hidden-input" name="site" value="">
 
           <div class="input-block">
-            <label class="input-label">ФИО</label>
+            <label class="input-label input-label--req">ФИО</label>
             <input type="text" class="form__input" placeholder="Ваше имя" name="name" data-mask="name" required>
           </div>
           <div class="input-block">
-            <label class="input-label">Введите телефон</label>
+            <label class="input-label input-label--req">Введите телефон</label>
             <input type="tel" class="form__input _phone" placeholder="+7 (___) ___-__-__" name="phone" data-mask="phone" required>
           </div>
 
           <div class="input-block _selectWrapper">
-            <label class="input-label">Как с Вами связаться?</label>
+            <label class="input-label input-label--req">Как с Вами связаться?</label>
 
             <div class="form__input form-select _select">Выберите способ связи</div>
 
@@ -794,7 +833,7 @@
               <li class="form-select__list-item" data-select="Telegram"><i class="bx bxl-telegram"></i>Telegram</li>
             </ul>
 
-            <input type="text" name="social" value="" class="form-select__input-hidden _select-hidden">
+            <input type="text" name="social" value="" class="form-select__input-hidden _select-hidden" required>
 
           </div>
 
