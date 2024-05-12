@@ -9,8 +9,9 @@
   <meta name="theme-color" content="#111111">
   <title>Подготовка к ЕГЭ и ОГЭ по русскому языку</title>
 
-  <link rel="preload" href="fonts/MullerRegular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/RobotoFlex.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- prefetch заменить на preload -->
+  <link rel="prefetch" href="fonts/MullerRegular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="prefetch" href="fonts/RobotoFlex.woff2" as="font" type="font/woff2" crossorigin>
 
     <link rel="stylesheet" href="css/vendor.css">
   <link rel="stylesheet" href="css/boxicons.min.css">
@@ -87,7 +88,7 @@
                       </a>
                     </li>
 
-                    <li class="dropdown-submenu__item" data-grid="3" data-grid-span="2" data-nav="box-button">
+                    <!-- <li class="dropdown-submenu__item" data-grid="3" data-grid-span="2" data-nav="box-button">
                       <div class="dropdown-submenu__title" data-grid-span="3">
                         Мини-курсы
                       </div>
@@ -106,14 +107,14 @@
                           <h2>Изложение <span>ОГЭ</span></h2>
                         </div>
                       </a>
-                    </li>
+                    </li> -->
                   </ul>
 
                 </li>
 
                 <!-- Платные продукты -->
                 <li class="nav__item nav__item--drop">
-                  <a href="#" class="nav__link nav__link--drop">Практика</a>
+                  <a href="#" class="nav__link nav__link--drop">Тренажёры</a>
 
                   <ul class="nav__list nav__list--dropdown dropdown-list dropdown-submenu" data-grid="3">
 
@@ -465,7 +466,7 @@
           <p>@ 2023 ИП Дворецкий В.Е.</p>
           <p><a href="publichnaya-oferta.html">Публичная оферта</a></p>
           <p><a href="politic.html">Политика конфиденциальности</a></p>
-            <p>Создание и сопровождение сайтов <a href="politic.html">АннаТок</a></p>
+          <p>Создание и сопровождение сайтов <a href="politic.html">АннаТок</a></p>
         </div>
 
       </div>
@@ -497,11 +498,11 @@
               </ul>
             </li>
             <li>
-              <h2>Практика</h2>
+              <h2>Тренажёры</h2>
               <ul>
-                <li><a href="">Тренажёр «Слова с ПРЕ- и ПРИ-»</a></li>
-                <li><a href="">Чередование гласных в корне</a></li>
-                <li><a href="">Ударения в словах</a></li>
+                <li><a href="#">Тренажёр «Слова с ПРЕ- и ПРИ-»</a></li>
+                <li><a href="#">Чередование гласных в корне</a></li>
+                <li><a href="#">Ударения в словах</a></li>
               </ul>
             </li>
 
@@ -515,17 +516,19 @@
     <div class="footer-section__bottom footer-bottom">
       <div class="footer-bottom__content">
         <ul>
-          <li><a href="malto:1ruslegko@gmail.com">1ruslegko@gmail.com</a></li>
+          <li><a href="malto:1ruslegko@gmail.com"><svg class="social-icon" viewBox="0 0 20 20" width="20" height="20">
+            <use href="img/sprite.svg#email"></use>
+          </svg>1ruslegko@gmail.com</a></li>
           <li><a
-            href="https://wa.me/79253753577?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!%20%F0%9F%91%8B%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82...">WhatsApp</a></li>
-          <li><a href="https://t.me/ruslegko">телеграм-канал @RUSLEGKO</a></li>
+              href="https://wa.me/79253753577?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!%20%F0%9F%91%8B%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82..."><svg class="social-icon" viewBox="0 0 20 20" width="20" height="20">
+                <use href="img/sprite.svg#wts"></use>
+              </svg>WhatsApp</a>
+          </li>
+          <li><a href="https://t.me/ruslegko"><svg class="social-icon" viewBox="0 0 24 24" width="24" height="24">
+            <use href="img/sprite.svg#tgr"></use>
+          </svg>
+          телеграм-канал @RUSLEGKO</a></li>
         </ul>
-
-        <!-- <p>По всем вопросам пишите на <a href="malto:1ruslegko@gmail.com">1ruslegko@gmail.com</a></p>
-        <p>Напишите мне в <a
-            href="https://wa.me/79253753577?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!%20%F0%9F%91%8B%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82...">WhatsApp</a>
-        </p>
-        <p>Подпишитесь на наш телеграм-канал <a href="https://t.me/ruslegko">@RUSLEGKO</a></p> -->
       </div>
     </div>
   </div>
@@ -543,24 +546,25 @@
     </div>
     <div class="modal-content__left">
       <div class="modal-content__top">
-        <h2 class="modal-title title title--h2 title--line"></h2>
+        <h2 class="modal-title title title--h2 title--line _modalTitle"></h2>
       </div>
       <div class="form-section">
-        <!-- action="telegram.php"  -->
+
         <form method="post" class="form form-section__content">
-          <input type="hidden" class="form__hidden-input" name="site" value="">
+          <input type="hidden" class="form__hidden-input _formName" name="site" value="">
 
           <div class="input-block">
-            <label class="input-label">ФИО</label>
+            <label class="input-label input-label--req">ФИО</label>
             <input type="text" class="form__input" placeholder="Ваше имя" name="name" data-mask="name" required>
           </div>
           <div class="input-block">
-            <label class="input-label">Введите телефон</label>
-            <input type="tel" class="form__input _phone" placeholder="+7 (___) ___-__-__" name="phone" data-mask="phone" required>
+            <label class="input-label input-label--req">Введите телефон</label>
+            <input type="tel" class="form__input _phone" placeholder="+7 (___) ___-__-__" name="phone" data-mask="phone"
+              required>
           </div>
 
           <div class="input-block _selectWrapper">
-            <label class="input-label">Как с Вами связаться?</label>
+            <label class="input-label input-label--req">Как с Вами связаться?</label>
 
             <div class="form__input form-select _select">Выберите способ связи</div>
 
@@ -570,7 +574,7 @@
               <li class="form-select__list-item" data-select="Telegram"><i class="bx bxl-telegram"></i>Telegram</li>
             </ul>
 
-            <input type="text" name="social" value="" class="form-select__input-hidden _select-hidden">
+            <input type="text" name="social" value="" class="form-select__input-hidden _select-hidden" required>
 
           </div>
 
@@ -585,7 +589,40 @@
     </div>
 
     <div class="modal-content__right">
-      <img class="modal-content__img" src="" alt="">
+      <img class="modal-content__img _modalImg" src="" alt="">
+    </div>
+
+  </div>
+</div>
+
+<div id="modalRev" class="modal">
+  <div class="modal-content">
+
+    <div class="_modalClose modal-content__close">
+      <div class="close-container">
+        <div class="leftright"></div>
+        <div class="rightleft"></div>
+      </div>
+    </div>
+
+    <div class="modal-content__rev">
+
+      <div class="modal-content__header">
+
+        <div class="modal-content__img _modalImg"></div>
+
+        <div class="modal-content__title">
+          <div class="modal-content__top">
+            <h2 class="modal-title title title--h2 title--line _modalTitle"></h2>
+          </div>
+
+          <div class="modal-content__desc _desc"></div>
+
+        </div>
+      </div>
+
+      <div class="modal-content__body _modalBody"></div>
+
     </div>
 
   </div>

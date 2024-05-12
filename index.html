@@ -9,8 +9,9 @@
   <meta name="theme-color" content="#111111">
   <title>Подготовка к ЕГЭ и ОГЭ по русскому языку</title>
 
-  <link rel="preload" href="fonts/MullerRegular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/RobotoFlex.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- prefetch заменить на preload -->
+  <link rel="prefetch" href="fonts/MullerRegular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="prefetch" href="fonts/RobotoFlex.woff2" as="font" type="font/woff2" crossorigin>
 
     <link rel="stylesheet" href="css/vendor.css">
   <link rel="stylesheet" href="css/boxicons.min.css">
@@ -87,7 +88,7 @@
                       </a>
                     </li>
 
-                    <li class="dropdown-submenu__item" data-grid="3" data-grid-span="2" data-nav="box-button">
+                    <!-- <li class="dropdown-submenu__item" data-grid="3" data-grid-span="2" data-nav="box-button">
                       <div class="dropdown-submenu__title" data-grid-span="3">
                         Мини-курсы
                       </div>
@@ -106,14 +107,14 @@
                           <h2>Изложение <span>ОГЭ</span></h2>
                         </div>
                       </a>
-                    </li>
+                    </li> -->
                   </ul>
 
                 </li>
 
                 <!-- Платные продукты -->
                 <li class="nav__item nav__item--drop">
-                  <a href="#" class="nav__link nav__link--drop">Практика</a>
+                  <a href="#" class="nav__link nav__link--drop">Тренажёры</a>
 
                   <ul class="nav__list nav__list--dropdown dropdown-list dropdown-submenu" data-grid="3">
 
@@ -246,66 +247,7 @@
   </div>
 </section>
 
-      <section class="methodic-section main__ methodic-section">
-  <div class="methodic-section__container container">
-    <div class="methodic-section__title">
-      <h2>Преимущества подготовки по нашей методике</h2>
-      <h3>При регулярных занятиях и при условии выполнения всех заданий каждый может рассчитывать на <span>90+
-          баллов</span> на экзамене</h3>
-    </div>
-    <div class="methodic-section__content methodic">
-
-      <div class="methodic__item">
-        <div class="methodic__content  methodic__content--top">
-          <img src="img/svg/calendar-2.svg" alt="Запомни" width="72">
-          <h3>Оптимальная система повторений</h3>
-          <h4>Закрепление материала по принципу интервальных повторений</h4>
-          <p>Покажем и научим, как эффективно повторять изученные материалы. Вы точно всё <b>запомните</b>!
-          </p>
-        </div>
-      </div>
-
-      <div class="methodic__item">
-        <div class="methodic__content">
-          <img src="img/svg/pensil.svg" alt="Запомни" width="72">
-          <!-- <img src="img/svg/zapomny.svg" alt="Запомни" width="72"> -->
-          <h3>Вся теория в удобном формате</h3>
-          <!-- <h4>Весь учебный материал в удобных и компактных таблицах и схемах</h4> -->
-          <h4>Компактные таблицы и схемы</h4>
-          <p>Мы провели анализ <b>школьной программы</b> по русскому языку и создали свои таблицы и схемы для
-            <b>быстрого понимания</b> и запоминания правил.
-          </p>
-        </div>
-      </div>
-
-      <div class="methodic__item">
-        <div class="methodic__content  methodic__content--top-2">
-          <img src="img/svg/mozg-2.svg" alt="Запомни" width="72">
-          <!-- <h3>1 модуль = несколько заданий ЕГЭ или ОГЭ</h3>
-          <h4>Каждый модуль относится к конкретным заданиям</h4>
-          <p>Много практики и проверка домашних заданий с комментариями и рекомендациями от преподавателя.</p> -->
-          <h3>Запомнить, нельзя зубрить</h3>
-          <h4>Приемы эффективного запоминания информации</h4>
-          <p>При подготовке к ЕГЭ важно правильно понимать и запоминать теоретический
-            материал, а не просто заучивать варианты.</p>
-        </div>
-      </div>
-
-      <div class="methodic__item">
-        <div class="methodic__content">
-          <img src="img/svg/online-2.svg" alt="Запомни" width="72">
-          <h3>Эффективное онлайн обучение</h3>
-          <h4>В формате вебинаров или личного общения по видеосвязи</h4>
-          <p>Вы можете изучать русский язык, находясь в любой точке мира в удобное для Вас время.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-      <section class="wool-section main__wool-section">
+      <section class="wool-section main__wool-section pt100 pb80">
   <h2 class="visually-hidden">Подробнее об обучении</h2>
   <div class="wool-section__container container">
     <div class="wool wool--man">
@@ -362,9 +304,10 @@
     </div>
   </div>
 </section>
+
        <section class="carousel-section main__carousel-section" id="courses">
   <div class="carousel-section__container container">
-    <div class="carousel-section__title">
+    <div class="carousel-section__title title title--m-center">
       <h2>Начни подготовку к экзамену</h2>
     </div>
     <div class="carousel swiper">
@@ -535,15 +478,15 @@
 
       <section class="tutor-section main__tutor-section">
   <div class="tutor-section__container container">
-    <div class="tutor-section__title">
-      <div class="tutor-section__sup">Ваш репетитор</div>
+    <div class="tutor-section__title title title--m-center">
+      <h3>Ваш репетитор</h3>
       <h2>Светлана Дворецкая</h2>
     </div>
     <div class="tutor">
       <picture>
-        <source srcset="img/decor/tutor-3.webp" media="(max-width: 768px)">
-        <source srcset="img/decor/tutor-3.webp" type="image/webp">
-        <img src="img/decor/tutor-3.jpg" alt="">
+        <source srcset="img/decor/sv-o.webp" media="(max-width: 768px)">
+        <source srcset="img/decor/sv-o.webp" type="image/webp">
+        <img src="img/decor/sv-o.png" alt="Светлана Дворецкая">
       </picture>
       <p>Тренер и методист по эйдетике и скорочтению. Учу запоминать информацию быстро, легко и надолго.</p>
       <p>Работаю с учениками по своей системе обучения с 2010 года.</p>
@@ -557,7 +500,7 @@
       </p>
       <h3>Специалист образовательной и антистрессовой кинезиологии:</h3>
       <ol>
-        <li>Курс <br><b>«Гимнастики мозга»</b> <br>(«Brain Gym» Dr. Paul Dennison (USA))</li>
+        <li>Курс <br><b>«Гимнастика мозга»</b> <br>(«Brain Gym» Dr. Paul Dennison (USA))</li>
         <li>Курс <br><b>«Оптимальная организация мозга»</b></li>
         <li>Курс <br><b>«Антистрессовая кинезиология»</b></li>
       </ol>
@@ -728,7 +671,7 @@
           <p>@ 2023 ИП Дворецкий В.Е.</p>
           <p><a href="publichnaya-oferta.html">Публичная оферта</a></p>
           <p><a href="politic.html">Политика конфиденциальности</a></p>
-            <p>Создание и сопровождение сайтов <a href="politic.html">АннаТок</a></p>
+          <p>Создание и сопровождение сайтов <a href="politic.html">АннаТок</a></p>
         </div>
 
       </div>
@@ -760,11 +703,11 @@
               </ul>
             </li>
             <li>
-              <h2>Практика</h2>
+              <h2>Тренажёры</h2>
               <ul>
-                <li><a href="">Тренажёр «Слова с ПРЕ- и ПРИ-»</a></li>
-                <li><a href="">Чередование гласных в корне</a></li>
-                <li><a href="">Ударения в словах</a></li>
+                <li><a href="#">Тренажёр «Слова с ПРЕ- и ПРИ-»</a></li>
+                <li><a href="#">Чередование гласных в корне</a></li>
+                <li><a href="#">Ударения в словах</a></li>
               </ul>
             </li>
 
@@ -778,17 +721,19 @@
     <div class="footer-section__bottom footer-bottom">
       <div class="footer-bottom__content">
         <ul>
-          <li><a href="malto:1ruslegko@gmail.com">1ruslegko@gmail.com</a></li>
+          <li><a href="malto:1ruslegko@gmail.com"><svg class="social-icon" viewBox="0 0 20 20" width="20" height="20">
+            <use href="img/sprite.svg#email"></use>
+          </svg>1ruslegko@gmail.com</a></li>
           <li><a
-            href="https://wa.me/79253753577?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!%20%F0%9F%91%8B%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82...">WhatsApp</a></li>
-          <li><a href="https://t.me/ruslegko">телеграм-канал @RUSLEGKO</a></li>
+              href="https://wa.me/79253753577?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!%20%F0%9F%91%8B%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82..."><svg class="social-icon" viewBox="0 0 20 20" width="20" height="20">
+                <use href="img/sprite.svg#wts"></use>
+              </svg>WhatsApp</a>
+          </li>
+          <li><a href="https://t.me/ruslegko"><svg class="social-icon" viewBox="0 0 24 24" width="24" height="24">
+            <use href="img/sprite.svg#tgr"></use>
+          </svg>
+          телеграм-канал @RUSLEGKO</a></li>
         </ul>
-
-        <!-- <p>По всем вопросам пишите на <a href="malto:1ruslegko@gmail.com">1ruslegko@gmail.com</a></p>
-        <p>Напишите мне в <a
-            href="https://wa.me/79253753577?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!%20%F0%9F%91%8B%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82...">WhatsApp</a>
-        </p>
-        <p>Подпишитесь на наш телеграм-канал <a href="https://t.me/ruslegko">@RUSLEGKO</a></p> -->
       </div>
     </div>
   </div>
@@ -806,12 +751,12 @@
     </div>
     <div class="modal-content__left">
       <div class="modal-content__top">
-        <h2 class="modal-title title title--h2 title--line"></h2>
+        <h2 class="modal-title title title--h2 title--line _modalTitle"></h2>
       </div>
       <div class="form-section">
-        <!-- action="telegram.php"  -->
+
         <form method="post" class="form form-section__content">
-          <input type="hidden" class="form__hidden-input" name="site" value="">
+          <input type="hidden" class="form__hidden-input _formName" name="site" value="">
 
           <div class="input-block">
             <label class="input-label input-label--req">ФИО</label>
@@ -819,7 +764,8 @@
           </div>
           <div class="input-block">
             <label class="input-label input-label--req">Введите телефон</label>
-            <input type="tel" class="form__input _phone" placeholder="+7 (___) ___-__-__" name="phone" data-mask="phone" required>
+            <input type="tel" class="form__input _phone" placeholder="+7 (___) ___-__-__" name="phone" data-mask="phone"
+              required>
           </div>
 
           <div class="input-block _selectWrapper">
@@ -848,7 +794,40 @@
     </div>
 
     <div class="modal-content__right">
-      <img class="modal-content__img" src="" alt="">
+      <img class="modal-content__img _modalImg" src="" alt="">
+    </div>
+
+  </div>
+</div>
+
+<div id="modalRev" class="modal">
+  <div class="modal-content">
+
+    <div class="_modalClose modal-content__close">
+      <div class="close-container">
+        <div class="leftright"></div>
+        <div class="rightleft"></div>
+      </div>
+    </div>
+
+    <div class="modal-content__rev">
+
+      <div class="modal-content__header">
+
+        <div class="modal-content__img _modalImg"></div>
+
+        <div class="modal-content__title">
+          <div class="modal-content__top">
+            <h2 class="modal-title title title--h2 title--line _modalTitle"></h2>
+          </div>
+
+          <div class="modal-content__desc _desc"></div>
+
+        </div>
+      </div>
+
+      <div class="modal-content__body _modalBody"></div>
+
     </div>
 
   </div>
